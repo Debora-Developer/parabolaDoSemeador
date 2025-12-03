@@ -6,16 +6,26 @@
 //
 
 import SwiftUI
+import SpriteKit
+import AVFoundation
 
 struct ContentView: View {
+    @State private var audioPlayer: AVAudioPlayer?
+    
+    var scene: SKScene {
+        let s = GameScene()
+        s.size = UIScreen.main.bounds.size
+        s.scaleMode = .aspectFit
+        return s
+    }
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        // obrigatório estar numa Navigation Stack
+        NavigationStack {
+            HomeView()
+                .onAppear {
+                }
         }
-        .padding()
     }
 }
 
