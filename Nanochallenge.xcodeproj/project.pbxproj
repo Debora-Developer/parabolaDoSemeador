@@ -78,11 +78,11 @@
 				};
 			};
 			buildConfigurationList = 110530742E3A40BC0029789A /* Build configuration list for PBXProject "Nanochallenge" */;
-			developmentRegion = en;
+			developmentRegion = "pt-BR";
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = 110530702E3A40BC0029789A;
 			minimizedProjectReferenceProxies = 1;

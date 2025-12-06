@@ -29,19 +29,10 @@ struct FinalB: View {
             
             //Adicionando final
                 HStack (spacing: 32) {
-                            Image("")
-                                .resizable()
-                                .frame(width: 160, height: 160)
                             Image("finalB")
                                 .resizable()
                                 .frame(width: 160, height: 160)
                                 .offset(x:50 ,y:20)
-                            Image("")
-                                .resizable()
-                                .frame(width: 160, height: 160)
-                            Image("")
-                                .resizable()
-                                .frame(width: 160, height: 160)
                         }//HStack
             
             //TEXTO E BOTÕES

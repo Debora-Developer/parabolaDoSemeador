@@ -32,15 +32,6 @@ struct FinalA: View {
                             .resizable()
                             .frame(width: 160, height: 160)
                             .offset(y: 10)
-                        Image("")
-                            .resizable()
-                            .frame(width: 160, height: 160)
-                        Image("")
-                            .resizable()
-                            .frame(width: 160, height: 160)
-                        Image("")
-                            .resizable()
-                            .frame(width: 160, height: 160)
                     }//HStack
             
             //Esconde o botão de voltar

@@ -16,6 +16,7 @@ struct HomeView: View {
                 .edgesIgnoringSafeArea(.all)
             //Imagem Semeador
             HStack(alignment: .bottom, spacing: 10){
+                Spacer()
                 Image("seeder")
                     .resizable()
                     .frame(width: 255, height: 352)
@@ -23,16 +24,17 @@ struct HomeView: View {
             //Posição Imagem Semeador
             .padding(.horizontal, 36)
             .offset(y:10) //mover 10px pra baixo
-            .frame(width: 852, height: 402,
-                   alignment: .bottomTrailing)
+//            .frame(width: 852, height: 402,
+//                   alignment: .bottomTrailing)
             
             VStack(spacing: 50){
                 Image("Logotipo")
                     .resizable()
-                    .frame(width: 395, height: 173, alignment: .center)
+                    .frame(maxWidth: 395, maxHeight: 173)
+//                    .frame(width: 395, height: 173, alignment: .center)
                 
                 //Esconde o botão de voltar
-                .navigationBarBackButtonHidden()
+                    .navigationBarBackButtonHidden()
                 
                 //Link para passar para a próxima tela
                 NavigationLink{
@@ -52,7 +54,7 @@ struct HomeView: View {
             }
         }
         //Cor de fundo
-        .frame(width: 874, height: 402)
+//        .frame(width: 874, height: 402)
         .background(Color(red: 0.53, green: 0.8, blue: 0.91))
         }
     }

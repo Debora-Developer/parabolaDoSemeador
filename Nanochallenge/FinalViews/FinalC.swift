@@ -20,21 +20,19 @@ struct FinalC: View {
             .padding(0)
             .frame(width: 874, height: 440, alignment: .bottom)
                     
-                HStack (spacing: 32) {
-                            Image("")
-                                .resizable()
-                                .frame(width: 160, height: 160)
-                            Image("")
-                                .resizable()
-                                .frame(width: 160, height: 160)
-                            Image("finalC")
-                                .resizable()
-                                .frame(width: 160, height: 160)
-                                .offset(y:10) //mover 10px pra baixo
-                            Image("")
-                                .resizable()
-                                .frame(width: 160, height: 160)
-                        }//HStack
+            HStack (spacing: 32) {
+                Spacer()
+                    .frame(height: 20)
+                
+                Image("finalC")
+                    .resizable()
+                    .frame(width: 160, height: 160)
+                    .offset(x: 160, y:10) //mover 10px pra baixo
+                
+                Spacer()
+                    .frame(height: 20)
+            }
+                
                 
             //TEXTO E BOTÕES
             

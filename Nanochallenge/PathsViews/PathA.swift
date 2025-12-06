@@ -27,20 +27,11 @@ struct PathA: View {
                 .offset(y: 30)
             
             //Adicionando final
-            HStack (spacing: 32) {
+            HStack (spacing: 8) {
                         Image("finalA")
                             .resizable()
                             .frame(width: 160, height: 160)
                             .offset(y: 10)
-                        Image("")
-                            .resizable()
-                            .frame(width: 160, height: 160)
-                        Image("")
-                            .resizable()
-                            .frame(width: 160, height: 160)
-                        Image("")
-                            .resizable()
-                            .frame(width: 160, height: 160)
                     }//HStack
             
             //TEXTO E BOTÕES

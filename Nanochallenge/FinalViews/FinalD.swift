@@ -21,15 +21,6 @@ struct FinalD: View {
             .frame(width: 874, height: 440, alignment: .bottom)
                     
                 HStack (spacing: 32) {
-                            Image("")
-                                .resizable()
-                                .frame(width: 160, height: 160)
-                            Image("")
-                                .resizable()
-                                .frame(width: 160, height: 160)
-                            Image("")
-                                .resizable()
-                                .frame(width: 160, height: 160)
                             Image("finalD")
                                 .resizable()
                                 .frame(width: 160, height: 160)

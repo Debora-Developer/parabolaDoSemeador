@@ -55,7 +55,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
 
     func createGifts() {
-        for i in 0..<4 {
+        let screenHeight = UIScreen.main.bounds.height
+        for i in 0..<32 {
             let gift = SKSpriteNode(imageNamed: "gift")
             gift.name = "gift"
             gift.setScale(0.1)
@@ -66,7 +67,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             gift.physicsBody = giftBody
             gift.physicsBody?.categoryBitMask = 2
 
-            gift.position = CGPoint(x: 900 + i * 300, y: Int.random(in: 350..<450))
+            gift.position = CGPoint(
+                x: 900 + i * 300,
+                y: Int.random(
+                    in: {
+                        if UIDevice.current.userInterfaceIdiom == .pad {
+                            Int(screenHeight * 0.3)..<Int(screenHeight * 0.6)
+                        } else {
+                            Int(screenHeight * 0.5)..<Int(screenHeight * 0.8)
+                        }
+                    }()
+                )
+            )
 
             setupGiftAnimation(for: gift)
             self.addChild(gift)
@@ -76,7 +88,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
 
     func setupGiftAnimation(for gift: SKSpriteNode) {
         // Movimento vertical (subir/descer suave)
-        let amplitudeY = CGFloat.random(in: 200...300)
+        let screenHeight = UIScreen.main.bounds.height
+        let amplitudeY = CGFloat.random(
+            in: (screenHeight*0.15)...(screenHeight*0.35)
+        )
         let durationY = Double.random(in: 2.0...2.5)
 
         let moveDown = SKAction.moveBy(x: 0, y: -amplitudeY, duration: durationY)
@@ -88,7 +103,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let verticalLoop = SKAction.repeatForever(.sequence([moveDown, moveUp]))
 
         // Movimento horizontal: uma única travessia da direita até sair da tela à esquerda
-        let _: CGFloat = 874
         let giftStartX = gift.position.x
         let distanceToMove = giftStartX + 100  // garantir que saia da tela à esquerda
 
@@ -104,7 +118,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             SKAction.sequence([moveLeft, remove])
         ])
 
-        gift.run(group)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .random(in: 0.15...0.5)) {
+            gift.run(group)
+        }
     }
 
     func setupBackgroundAnimation() {
@@ -117,6 +133,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         let sprite1 = SKSpriteNode(imageNamed: "layer\(layer)")
         let sprite2 = SKSpriteNode(imageNamed: "layer\(layer)")
         sprite2.position = CGPoint(x: self.size.width, y: 0)
+        sprite1.size = self.size
+        sprite2.size = self.size
 
         let layerNode = SKNode()
         layerNode.addChild(sprite1)

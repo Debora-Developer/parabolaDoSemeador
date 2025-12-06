@@ -17,22 +17,13 @@ struct PathC: View {
                     .frame(maxWidth: .infinity, minHeight: 146, maxHeight: 146)
                 .background(Color(red: 0.73, green: 0.44, blue: 0.32))}
             .padding(0)
-            .frame(width: 874, height: 440, alignment: .bottom)
+            .frame(height: 440, alignment: .bottom)
                     
-                HStack (spacing: 32) {
-                            Image("")
-                                .resizable()
-                                .frame(width: 160, height: 160)
-                            Image("")
-                                .resizable()
-                                .frame(width: 160, height: 160)
+                HStack (spacing: 8) {
                             Image("finalC")
                                 .resizable()
-                                .frame(width: 160, height: 160)
-                                .offset(y:10) //mover 10px pra baixo
-                            Image("")
-                                .resizable()
-                                .frame(width: 160, height: 160)
+                                .frame(width: 144, height: 144)
+                                .offset(y:20) //mover 10px pra baixo
                         }//HStack
                 
             //TEXTO E BOTÕES

@@ -23,8 +23,6 @@ struct ContentView: View {
         // obrigatório estar numa Navigation Stack
         NavigationStack {
             HomeView()
-                .onAppear {
-                }
         }
     }
 }
