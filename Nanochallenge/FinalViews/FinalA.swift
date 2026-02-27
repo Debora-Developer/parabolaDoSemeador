@@ -25,6 +25,7 @@ struct FinalA: View {
                 .resizable()
                 .frame(width: 874, height: 389)
                 .offset(y: 30)
+                .accessibilityLabel("Pássaro marrom com as asas abertas segurando a semente amarela com os pés")
             
             //Adicionando final
             HStack (spacing: 32) {
@@ -32,6 +33,7 @@ struct FinalA: View {
                             .resizable()
                             .frame(width: 160, height: 160)
                             .offset(y: 10)
+                            .accessibilityLabel("Terra vazia")
                     }//HStack
             
             //Esconde o botão de voltar
@@ -44,6 +46,7 @@ struct FinalA: View {
                     .foregroundStyle(.white)
                     .kerning(0.38)
                     .frame(width: 344, alignment: .topLeading)
+                    .dynamicTypeSize(...DynamicTypeSize.accessibility1)
                 
                 Text("Isso representa quando ouvimos a mensagem de Deus, mas não a compreendemos de verdade. É como uma oportunidade incrível que passa por nós, mas não damos a atenção devida e ela é roubada de nós.")
                     .font(.subheadline.bold())
@@ -61,6 +64,7 @@ struct FinalA: View {
                             .padding(.vertical, 8)
                             .background(Color(red: 0.27, green: 0.39, blue: 0.37))
                             .cornerRadius(40)
+                            .dynamicTypeSize(...DynamicTypeSize.accessibility4)
                     }
                     NavigationLink{
                         HomeView()
@@ -88,8 +92,3 @@ struct FinalA: View {
         .background(Color(red: 0.53, green: 0.8, blue: 0.91))
     }
 }
-        
-
-#Preview {
-   FinalA()
-        }

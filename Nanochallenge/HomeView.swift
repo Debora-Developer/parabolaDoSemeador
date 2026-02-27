@@ -14,12 +14,14 @@ struct HomeView: View {
             Image("BackgroundHome")
                 .resizable()
                 .edgesIgnoringSafeArea(.all)
+                .accessibilityLabel("Montanhas verdes e no céu azul")
             //Imagem Semeador
             HStack(alignment: .bottom, spacing: 10){
                 Spacer()
                 Image("seeder")
                     .resizable()
                     .frame(width: 255, height: 352)
+                    .accessibilityLabel("Homem branco com cabelo marrom e barba, vestindo um macacão alaranjado e camisa amarela segurando um vaso de planta com uma muda verde")
             }
             //Posição Imagem Semeador
             .padding(.horizontal, 36)
@@ -32,6 +34,7 @@ struct HomeView: View {
                     .resizable()
                     .frame(maxWidth: 395, maxHeight: 173)
 //                    .frame(width: 395, height: 173, alignment: .center)
+                    .accessibilityLabel("Parábola do Semeador")
                 
                 //Esconde o botão de voltar
                     .navigationBarBackButtonHidden()
@@ -58,6 +61,3 @@ struct HomeView: View {
         .background(Color(red: 0.53, green: 0.8, blue: 0.91))
         }
     }
-#Preview {
-    HomeView()
-}

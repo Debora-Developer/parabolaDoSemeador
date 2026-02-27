@@ -23,10 +23,12 @@ struct PathsView: View {
                 Text("Aonde a semente do semeador caiu?")
                     .font(.title.bold())
                     .foregroundColor(.white)
+                    .dynamicTypeSize(...DynamicTypeSize.accessibility1)
                     
                 Text("Escolha uma das opções para o semeador:")
                     .font(.headline)
                     .foregroundStyle(.white)
+                    .dynamicTypeSize(...DynamicTypeSize.accessibility1)
             // As sementes são botões
                 HStack (spacing: 8) {
                     NavigationLink{
@@ -36,6 +38,7 @@ struct PathsView: View {
                             .resizable()
                             .frame(width: 144, height: 144)
                             .offset(y:12) //mover 10px pra baixo
+                            .accessibilityLabel("Semente amarela")
                     }
                     Spacer()
                     NavigationLink{
@@ -45,6 +48,7 @@ struct PathsView: View {
                             .resizable()
                             .frame(width: 144, height: 144)
                             .offset(y:12) //mover 10px pra baixo
+                            .accessibilityLabel("Semente amarela cercadas de pedras cinzas")
                     }
                     Spacer()
                     NavigationLink{
@@ -54,6 +58,7 @@ struct PathsView: View {
                             .resizable()
                             .frame(width: 144, height: 144)
                             .offset(y:12) //mover 10px pra baixo
+                            .accessibilityLabel("Semente amarela cercada de plantas pontiagudas marrons")
                     }
                     Spacer()
                     NavigationLink{
@@ -63,6 +68,7 @@ struct PathsView: View {
                             .resizable()
                             .frame(width: 144, height: 144)
                             .offset(y:12) //mover 10px pra baixo
+                            .accessibilityLabel("Semente amarela com brilho")
                     }
                 } //HStack
                 
@@ -80,6 +86,7 @@ struct PathsView: View {
                             .padding(.horizontal, 8)
                             .padding(.vertical, 8)
                             .cornerRadius(40)
+                            .dynamicTypeSize(...DynamicTypeSize.accessibility1)
                     }
                     NavigationLink{
                         PathB()
@@ -90,6 +97,7 @@ struct PathsView: View {
                             .padding(.horizontal, 8)
                             .padding(.vertical, 8)
                             .cornerRadius(40)
+                            .dynamicTypeSize(...DynamicTypeSize.accessibility1)
                     }
                     NavigationLink{
                         PathC()
@@ -100,6 +108,7 @@ struct PathsView: View {
                             .padding(.horizontal, 8)
                             .padding(.vertical, 8)
                             .cornerRadius(40)
+                            .dynamicTypeSize(...DynamicTypeSize.accessibility1)
                     }
                     NavigationLink{
                         PathD()
@@ -110,6 +119,7 @@ struct PathsView: View {
                             .padding(.horizontal, 8)
                             .padding(.vertical, 8)
                             .cornerRadius(40)
+                            .dynamicTypeSize(...DynamicTypeSize.accessibility1)
                     }
                     
                 } //HStack
@@ -121,8 +131,4 @@ struct PathsView: View {
         .frame(maxWidth: .infinity)
         .background(Color(red: 0.53, green: 0.8, blue: 0.91))
     }
-}
-
-#Preview {
-    PathsView()
 }

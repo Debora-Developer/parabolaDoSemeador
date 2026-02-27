@@ -22,7 +22,7 @@ struct ContentView: View {
     var body: some View {
         // obrigatório estar numa Navigation Stack
         NavigationStack {
-            HomeView()
+            PathD()
         }
     }
 }

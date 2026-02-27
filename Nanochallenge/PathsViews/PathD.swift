@@ -8,6 +8,23 @@
 import SwiftUI
 
 struct PathD: View {
+    
+    @Environment(\.dynamicTypeSize) var typeSize
+    
+    var dynamicPathD: String {
+        switch typeSize {
+            
+        case ..<DynamicTypeSize.large:
+            return "Agora vou ter uma boa colheita! Estou muito feliz!"
+            
+        case DynamicTypeSize.large ..< DynamicTypeSize.accessibility2:
+            return "Vou ter boa colheita! Estou feliz!"
+            
+        default:
+            return "Vou ter boa colheita!"
+        }
+    }
+    
     var body : some View {
         ZStack{
             //Adicionando retangulo marrom
@@ -24,6 +41,7 @@ struct PathD: View {
                                 .resizable()
                                 .frame(width: 144, height: 144)
                                 .offset(y:15) //mover px pra baixo
+                                .accessibilityLabel("flor branca com centro amarelo e brilho")
                         }//HStack
             
             //TEXTO E BOTÕES
@@ -31,11 +49,11 @@ struct PathD: View {
             .navigationBarBackButtonHidden()
             
             VStack(alignment: .leading, spacing: 12) {
-                Text("Agora vou ter uma boa colheita! Estou muito feliz!")
+                Text(dynamicPathD)
                     .font(.title.bold())
                     .foregroundStyle(.white)
                     .kerning(0.38)
-                    .frame(width: 389, alignment: .topLeading)
+                    .multilineTextAlignment(.leading)
                 
                 HStack(alignment: .bottom, spacing: 26) {
                     NavigationLink{
@@ -48,6 +66,7 @@ struct PathD: View {
                             .padding(.vertical, 8)
                             .background(Color(red: 0.27, green: 0.39, blue: 0.37))
                             .cornerRadius(40)
+                            .dynamicTypeSize(...DynamicTypeSize.accessibility4)
                     }
                     
                     NavigationLink{
@@ -60,6 +79,7 @@ struct PathD: View {
                             .padding(.vertical, 8)
                             .background(Color(red: 0.27, green: 0.39, blue: 0.37))
                             .cornerRadius(40)
+                            .dynamicTypeSize(...DynamicTypeSize.accessibility4)
                     }
                     NavigationLink{
                         HomeView()
@@ -86,8 +106,4 @@ struct PathD: View {
         .frame(width: 874, height: 402)
         .background(Color(red: 0.53, green: 0.8, blue: 0.91))
     }
-}
-
-#Preview {
-    PathD()
 }

@@ -9,6 +9,21 @@
 import SwiftUI
 
 struct FinalB: View {
+    var dynamicPathB: String {
+        @Environment(\.dynamicTypeSize) var typeSize
+            switch typeSize {
+                
+            case ..<DynamicTypeSize.large:
+                return "Ops... ela queimou no sol porque não tinha raiz"
+                
+            case DynamicTypeSize.large ..< DynamicTypeSize.accessibility2:
+                return "Queimou no sol porque não tinha raiz"
+                
+            default:
+                return "Queimou no sol"
+            }
+        }
+    
     var body : some View {
         ZStack{
             //Ilustração
@@ -17,6 +32,7 @@ struct FinalB: View {
                 .resizable()
                 .frame(width: 874, height: 389)
                 .offset(y: -20)
+                .accessibilityLabel("Raios solares amarelos")
             
             //Adicionando retangulo marrom
             VStack(alignment: .center, spacing: 10) {
@@ -33,6 +49,7 @@ struct FinalB: View {
                                 .resizable()
                                 .frame(width: 160, height: 160)
                                 .offset(x:50 ,y:20)
+                                .accessibilityLabel("Muda de planta verde e murcha cercada de pedras")
                         }//HStack
             
             //TEXTO E BOTÕES
@@ -40,16 +57,16 @@ struct FinalB: View {
             .navigationBarBackButtonHidden()
             
             VStack(alignment: .leading, spacing: 4) {
-                Text("Ops... ela queimou no sol porque não tinha raiz")
+                Text(dynamicPathB)
                     .font(.title.bold())
                     .foregroundStyle(.white)
                     .kerning(0.38)
                     .frame(width: 400, alignment: .topLeading)
                 
-                Text("Isso representa quando fazemos um compromisso sem profundidade. Assim que surge a dificuldade, deixamos a mensagem de Deus pois nossa base não está sólida.")
-                    .font(.subheadline.bold())
-                    .foregroundStyle(.white)
-                    .frame(width: 300, alignment: .topLeading)
+                        Text("Isso representa quando fazemos um compromisso sem profundidade. Assim que surge a dificuldade, deixamos a mensagem de Deus pois nossa base não está sólida.")
+                            .font(.subheadline.bold())
+                            .foregroundStyle(.white)
+                            .frame(width: 300, alignment: .topLeading)
                 
                 HStack(alignment: .bottom, spacing: 26) {
                     NavigationLink{
@@ -62,6 +79,8 @@ struct FinalB: View {
                             .padding(.vertical, 8)
                             .background(Color(red: 0.27, green: 0.39, blue: 0.37))
                             .cornerRadius(40)
+                            .dynamicTypeSize(...DynamicTypeSize.accessibility4)
+                        
                     }
                     NavigationLink{
                         HomeView()
@@ -88,8 +107,4 @@ struct FinalB: View {
         .frame(width: 874, height: 402)
         .background(Color(red: 0.53, green: 0.8, blue: 0.91))
     }
-}
-
-#Preview {
-    FinalB()
 }

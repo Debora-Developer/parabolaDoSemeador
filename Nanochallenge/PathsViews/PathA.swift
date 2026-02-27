@@ -25,6 +25,7 @@ struct PathA: View {
                 .resizable()
                 .frame(width: 874, height: 389)
                 .offset(y: 30)
+                .accessibilityLabel("Pássaro marrom com as asas abertas segurando a semente amarela com os pés")
             
             //Adicionando final
             HStack (spacing: 8) {
@@ -32,6 +33,7 @@ struct PathA: View {
                             .resizable()
                             .frame(width: 160, height: 160)
                             .offset(y: 10)
+                            .accessibilityLabel("Terra vazia")
                     }//HStack
             
             //TEXTO E BOTÕES
@@ -44,6 +46,7 @@ struct PathA: View {
                     .foregroundStyle(.white)
                     .kerning(0.38)
                     .frame(width: 344, alignment: .topLeading)
+                    .dynamicTypeSize(...DynamicTypeSize.accessibility1)
                 
                 HStack(alignment: .bottom, spacing: 26) {
                     NavigationLink{
@@ -56,6 +59,7 @@ struct PathA: View {
                             .padding(.vertical, 8)
                             .background(Color(red: 0.27, green: 0.39, blue: 0.37))
                             .cornerRadius(40)
+                            .dynamicTypeSize(...DynamicTypeSize.accessibility4)
                     }
                     
                     NavigationLink{
@@ -68,6 +72,7 @@ struct PathA: View {
                             .padding(.vertical, 8)
                             .background(Color(red: 0.27, green: 0.39, blue: 0.37))
                             .cornerRadius(40)
+                            .dynamicTypeSize(...DynamicTypeSize.accessibility4)
                     }
                     NavigationLink{
                         HomeView()
@@ -79,6 +84,7 @@ struct PathA: View {
                             .padding(.vertical, 8)
                             .background(Color(red: 0.27, green: 0.39, blue: 0.37))
                             .cornerRadius(40)
+                            .dynamicTypeSize(...DynamicTypeSize.accessibility4)
                     }
                 } //HStack botões
                 .padding(.horizontal, 0)
@@ -95,7 +101,3 @@ struct PathA: View {
     }
 }
         
-
-#Preview {
-   PathA()
-        }
